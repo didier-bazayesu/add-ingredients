@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 import HeaderIncredient from './components/HeaderIncredient'
-import ChangeBulb from './components/changeBulb'
+
+
 
 
 function App() {
@@ -9,8 +9,9 @@ function App() {
 
   return (
     <div>
-       <ChangeBulb/>
-      <HeaderIncredient/>
+
+      <HeaderIncredient />
+
     </div>
   )
 }
