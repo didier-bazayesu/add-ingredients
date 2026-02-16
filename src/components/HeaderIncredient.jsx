@@ -5,7 +5,7 @@ function HeaderIncredient() {
   const ingredients = ["Flour", "Sugar", "Eggs"];
 
   // array of input ingredients
-  let [ingredient, setincredient] = useState(() => {
+  let [ingredient, setIngredient] = useState(() => {
     try {
       const saved = localStorage.getItem('ingredients');
       return saved ? JSON.parse(saved) : ingredients;
@@ -34,7 +34,7 @@ function HeaderIncredient() {
 
     // checking if we have typed something
     if (inputvalue.trim().length > 0) {
-      setincredient((array) => [
+      setIngredient((array) => [
         ...array,
         inputvalue.trim()
       ]);
@@ -46,7 +46,7 @@ function HeaderIncredient() {
 
   // delete the specific ingredients
   function deleteFromList(lastIndex) {
-    setincredient(prev => [
+    setIngredient(prev => [
       ...prev.filter((__, nowIndex) => nowIndex !== lastIndex)
     ]);
   }
@@ -80,7 +80,7 @@ function HeaderIncredient() {
             />
 
             < button
-              className='text-black bg-green-200 p-2 font-bold rounded-[3px] border-white border cursor-pointer hover:text-amber-300 hover:bg-green-600'
+              className='text-black bg-white p-2 font-bold rounded-[3px] border-gray-300 border cursor-pointer hover:text-amber-300 hover:bg-green-600 '
               type='submit'
             >
               +Add incredient
