@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import RecipeComponent from './RecipeComponent';
-
-
+import ListIngredient from './ListIngredient';
 function HeaderIncredient() {
 
   const ingredients = ["Flour", "Sugar", "Eggs"];
@@ -14,9 +13,6 @@ function HeaderIncredient() {
       return ingredients;
     }
   });
-
-
-
   // rendering for each user input ingredient
   useEffect(() => {
     localStorage.setItem('ingredients', JSON.stringify(ingredient));
@@ -52,8 +48,6 @@ function HeaderIncredient() {
       ...prev.filter((__, nowIndex) => nowIndex !== lastIndex)
     ]);
   }
-
-
   return (
     // returning the ingredient card
     <section className='bg-green-100 p-5 w-max rounded-2xl shadow-xl mx-auto mt-5'>
@@ -89,23 +83,7 @@ function HeaderIncredient() {
 
       {ingredient.length > 0 && (
         <section>
-          <h2 className='text-2xl ml-2 font-extrabold'>
-            Ingredients on hand:
-          </h2>
-
-          <ul className='items-center mx-auto w-sm rounded-[5px] shadow-sm bg-green-50 p-5 text-left'>
-            {ingredient.map((elem, index) => (
-              <li key={index}>
-                🥣 {elem}
-                <button
-                  className='text-red-600 hover:text-blue-800 cursor-pointer transition-all duration-200 hover:bg-amber-400'
-                  onClick={() => deleteFromList(index)}
-                >
-                  ❌
-                </button>
-              </li>
-            ))}
-          </ul>
+          <ListIngredient ingredient={ingredient} deleteFromList={deleteFromList}/>
 
           {ingredient.length > 3 && (
             <div className='pt-10'>
@@ -115,13 +93,8 @@ function HeaderIncredient() {
         </section>
       )}
 
-      
-
     </section>
-
-    
 
   );
 }
-
 export default HeaderIncredient;
