@@ -1,4 +1,5 @@
-import HeaderIncredient from './components/HeaderIncredient'
+import HeaderIncredient from './components/MainComponent'
+
 
 
 
@@ -11,6 +12,7 @@ function App() {
     <div>
 
       <HeaderIncredient />
+    
 
     </div>
   )
