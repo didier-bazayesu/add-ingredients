@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import RecipeComponent from './RecipeComponent';
 import ListIngredient from './ListIngredient';
+
+
 function HeaderIncredient() {
 
   const ingredients = ["Flour", "Sugar", "Eggs"];
@@ -16,6 +18,7 @@ function HeaderIncredient() {
   // rendering for each user input ingredient
   useEffect(() => {
     localStorage.setItem('ingredients', JSON.stringify(ingredient));
+    console.log('renderd')
   }, [ingredient]);
 
   // taking input value
@@ -87,7 +90,7 @@ function HeaderIncredient() {
 
           {ingredient.length > 3 && (
             <div className='pt-10'>
-              <RecipeComponent value= ""/>
+              <RecipeComponent ingredient={ingredient}/>
             </div>
           )}
         </section>
