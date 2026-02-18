@@ -6,9 +6,10 @@ import { SYSTEM_PROMPT } from "../ai.js";
 import { COHERE_API_KEY } from "./config.js";
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5176/" })); // adjust if CRA (3000)
-app.use(express.json());
 
+// CORS: allow all for now (works in production)
+app.use(cors());
+app.use(express.json());
 
 // Initialize Cohere client
 const cohere = new CohereClient({
@@ -23,7 +24,7 @@ app.post("/ask", async (req, res) => {
 
         console.log("Incoming message:", userMessage);
 
-        // ✅ Use supported model
+        // Use supported model
         const response = await cohere.chat({
             model: "tiny-aya-global", // or "command-r-mini" for faster responses
             message: userMessage,
@@ -39,7 +40,9 @@ app.post("/ask", async (req, res) => {
     }
 });
 
-const PORT = 5000;
+// PORT: use Render's dynamic port or fallback to 5000
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-    console.log(`✅ Server running on http://localhost:${PORT}`);
+    console.log(`✅ Server running on port ${PORT}`);
 });
