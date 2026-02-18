@@ -1,9 +1,10 @@
 // src/server/ai-backend/server.js
+
 import express from "express";
 import cors from "cors";
 import { CohereClient } from "cohere-ai";
-import { SYSTEM_PROMPT } from "./ai.js"; // fixed import: same folder
-import { COHERE_API_KEY } from "./config.js"; // fixed import: same folder
+import { COHERE_API_KEY } from "./config.js";
+import { SYSTEM_PROMPT } from "./ai.js";
 
 const app = express();
 
