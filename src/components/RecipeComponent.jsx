@@ -59,7 +59,7 @@ function RecipeComponent({ ingredient }) {
                 </div>
             </div>
 
-            {recipeShown && <OrderRecipe recipe={recipe} />}
+            {recipeShown && <OrderRecipe recipe={recipe} ingredients ={ingredient} />}
         </>
     );
 }

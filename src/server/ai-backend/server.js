@@ -6,7 +6,7 @@ import { SYSTEM_PROMPT } from "../ai.js";
 import { COHERE_API_KEY } from "./config.js";
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5175/" })); // adjust if CRA (3000)
+app.use(cors({ origin: "http://localhost:5176/" })); // adjust if CRA (3000)
 app.use(express.json());
 
 

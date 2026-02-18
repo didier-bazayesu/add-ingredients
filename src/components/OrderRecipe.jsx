@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 
 function OrderRecipe({ recipe }) {
     return (
-        <section className="mt-10 max-w-3xl mx-auto  rounded-2xl shadow-2xl p-8 bg-amber-500">
+        <section className="mt-10 max-w-3xl mx-auto  rounded-2xl shadow-2xl p-8 bg-green-100">
             <h2 className="text-3xl font-extrabold text-green-800 mb-6">
                 👨‍🍳 Didier Chef Recommends:
             </h2>
