@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 
 function OrderRecipe({ recipe }) {
     return (
-        <section className="mt-10 max-w-3xl mx-auto rounded-3xl shadow-2xl p-8 bg-gradient-to-r from-green-100 via-yellow-100 to-pink-100 border border-green-200">
+        <section className="mt-10 max-w-3xl mx-auto rounded-3xl shadow-2xl p-8 bg-linear-to-r from-green-100 via-yellow-100 to-pink-100 border border-green-200">
 
             {/* Header - centered */}
             <h2 className="text-3xl font-extrabold text-green-900 mb-6 text-center">
