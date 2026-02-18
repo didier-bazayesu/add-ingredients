@@ -1,4 +1,5 @@
-import HeaderIncredient from './components/MainComponent'
+import MainComponent from './components/MainComponent'
+
 
 
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <div>
 
-      <HeaderIncredient />
+      <MainComponent/>
     
 
     </div>

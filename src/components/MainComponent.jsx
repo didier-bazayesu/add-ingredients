@@ -3,7 +3,11 @@ import RecipeComponent from './RecipeComponent';
 import ListIngredient from './ListIngredient';
 
 
+<<<<<<< HEAD
 function HeaderIncredient() {
+=======
+function MainComponent() {
+>>>>>>> upstream/clean-main
 
   const ingredients = ["Flour", "Sugar", "Eggs"];
   let [ingredient, setIngredient] = useState(() => {
@@ -100,4 +104,8 @@ function HeaderIncredient() {
 
   );
 }
+<<<<<<< HEAD
 export default HeaderIncredient;
+=======
+export default MainComponent;
+>>>>>>> upstream/clean-main
