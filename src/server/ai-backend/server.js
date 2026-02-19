@@ -3,8 +3,9 @@ import express from "express";
 import cors from "cors";
 import { CohereClient } from "cohere-ai";
 import { SYSTEM_PROMPT } from "./ai.js";
-import { COHERE_API_KEY } from "./config.js";
 
+
+const COHERE_API_KEY = process.env.COHERE_API_KEY;
 const app = express();
 app.use(cors({ origin: "http://localhost:5176/" })); // adjust if CRA (3000)
 app.use(express.json());
