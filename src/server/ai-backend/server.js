@@ -1,16 +1,14 @@
 // src/server/ai-backend/server.js
-
 import express from "express";
 import cors from "cors";
 import { CohereClient } from "cohere-ai";
-import { COHERE_API_KEY } from "./config.js";
 import { SYSTEM_PROMPT } from "./ai.js";
+import { COHERE_API_KEY } from "./config.js";
 
 const app = express();
-
-// ✅ CORS: allow all origins (works for local dev & production)
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5176/" })); // adjust if CRA (3000)
 app.use(express.json());
+
 
 // Initialize Cohere client
 const cohere = new CohereClient({
@@ -25,6 +23,7 @@ app.post("/ask", async (req, res) => {
 
         console.log("Incoming message:", userMessage);
 
+        // ✅ Use supported model
         const response = await cohere.chat({
             model: "tiny-aya-global", // or "command-r-mini" for faster responses
             message: userMessage,
@@ -40,9 +39,7 @@ app.post("/ask", async (req, res) => {
     }
 });
 
-// ✅ Dynamic port for Render deployment or fallback to 5000
-const PORT = process.env.PORT || 5000;
-
+const PORT = 5000;
 app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
+    console.log(`✅ Server running on http://localhost:${PORT}`);
 });
