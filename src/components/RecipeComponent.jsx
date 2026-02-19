@@ -11,7 +11,13 @@ function RecipeComponent({ ingredient }) {
     async function handleGetRecipe() {
         try {
             setIsLoading(true);
-            const response = await fetch("/ask", {
+
+            const API_URL =
+                import.meta.env.MODE === "development"
+                    ? "/ask"
+                    : "https://add-ingredients-4.onrender.com/ask";
+
+            const response = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: ingredientMessage }),
@@ -30,6 +36,7 @@ function RecipeComponent({ ingredient }) {
             setIsLoading(false);
         }
     }
+
 
     return (
         <>
